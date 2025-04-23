@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PKBM Kuntum Mekar</title>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background-color: #000;
+  overflow: hidden;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+#welcome-text {
+  font-size: 24px;
+  max-width: 800px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 2s ease forwards;
+}
+
+#upk-btn {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: white;
+  background-color: #4a00e0;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.show-button {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>  
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <div class="content">
+    <h1 id="welcome-text">Selamat Datang di Halaman PKBM Kuntum Mekar Kecamatan Tapa</h1>
+    <a href="https://pkbmkuntummekar.github.io/upk2025" class="btn" id="upk-btn">UPK 2025</a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    // Konfigurasi Particles.js
+particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 80,
+      density: {
+        enable: true,
+        value_area: 800,
+      },
+    },
+    color: {
+      value: "#a64ac9",
+    },
+    shape: {
+      type: "circle",
+    },
+    opacity: {
+      value: 0.6,
+    },
+    size: {
+      value: 3,
+      random: true,
+    },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      out_mode: "out",
+    },
+  },
+  interactivity: {
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse",
+      },
+    },
+  },
+  retina_detect: true,
+});
+
+// Delay munculnya tombol setelah animasi teks selesai
+window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    document.getElementById("upk-btn").classList.add("show-button");
+  }, 2200); // Tunggu animasi text selesai (2s)
+});
+
+  </script>
+</body>
+</html>
