@@ -64,6 +64,29 @@ body, html {
   cursor: pointer;
 }
 
+  .button-group {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-group .btn {
+  padding: 15px 30px;
+  font-size: 18px;
+  color: white;
+  background-color: #4a00e0;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+
 .show-button {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -153,6 +176,7 @@ body, html {
   <div class="content">
     <h1 id="welcome-text">Selamat Datang di Halaman PKBM Kuntum Mekar Kecamatan Tapa</h1>
     <a href="https://pkbmkuntummekar.github.io/upk2025" class="btn" id="upk-btn">UPK 2025</a>
+    <a href="https://pkbmkuntummekar.github.io/upk2025/pengumuman.html" class="btn" id="skor-btn">SKOR UPK 2025</a>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
@@ -201,6 +225,7 @@ particlesJS("particles-js", {
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     document.getElementById("upk-btn").classList.add("show-button");
+    document.getElementById("skor-btn").classList.add("show-button");
   }, 2200); // Tunggu animasi text selesai (2s)
 });
 
